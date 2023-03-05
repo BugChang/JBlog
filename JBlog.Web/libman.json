@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "wangeditor5@5.1.23",
+      "destination": "wwwroot/lib/wangeditor5/"
+    }
+  ]
+}

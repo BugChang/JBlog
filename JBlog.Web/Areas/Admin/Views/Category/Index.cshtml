@@ -1,0 +1,39 @@
+﻿@model IList<JBlog.Application.ViewModels.CategoryViewModel>
+<div class="card">
+    <div class="card-header">
+        <a class="btn btn-primary" asp-area="Admin" asp-controller="Category" asp-action="Create">添加分类</a>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 20px">#</th>
+                    <th style="width: 200px">名称</th>
+                    <th>描述</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var category in Model)
+                {
+                    <tr>
+                        <td>1.</td>
+                        <td>@category.Name</td>
+                        <td>@category.Description</td>
+                        <td>Update software</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card-footer clearfix">
+        <ul class="pagination pagination-sm m-0 float-right">
+            <li class="page-item"><a class="page-link" href="#">«</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">»</a></li>
+        </ul>
+    </div>
+</div>

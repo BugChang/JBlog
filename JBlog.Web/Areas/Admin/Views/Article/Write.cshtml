@@ -1,0 +1,86 @@
+﻿@model JBlog.Application.ViewModels.ArticleWriteViewModel
+<form asp-area="Admin" asp-controller="Article" asp-action="Write" method="post">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtTitle">标题</label>
+                <input type="text" class="form-control" id="txtTitle" placeholder="请输入文章标题">
+            </div>
+            <div class="form-group">
+                <label for="txtCategoryId">分类</label>
+                <select class="custom-select" id="txtCategoryId">
+                    <option>Value 1</option>
+                    <option>Value 2</option>
+                    <option>Value 3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="@Model.Content"/>
+                <input type="hidden" asp-for="@Model.HtmlContent"/>
+                <div id="editor—wrapper">
+                    <div id="toolbar-container"><!-- 工具栏 --></div>
+                    <div id="editor-container"><!-- 编辑器 --></div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-default" asp-area="Admin" asp-controller="Article" asp-action="SaveDraft">存为草稿</button>
+            <button type="submit" class="btn btn-primary" asp-area="Admin" asp-controller="Article" asp-action="Publish">立即发布</button>
+        </div>
+    </div>
+</form>
+
+@section styles
+    {
+    <link href="~/lib/wangeditor5/css/style.min.css" rel="stylesheet" />
+    <style>
+        #editor-wrapper {
+            border: 1px solid #ccc;
+            z-index: 100; /* 按需定义 */
+        }
+
+        #toolbar-container {
+            border-bottom: 1px solid #ccc;
+        }
+
+        #editor-container {
+            height: 500px;
+        }
+    </style>
+}
+
+@section scripts
+    {
+    <script src="~/lib/wangeditor5/index.min.js"></script>
+    <script>
+        const { createEditor, createToolbar } = window.wangEditor
+        const editorConfig = {
+            placeholder: '请输入内容...',
+            onChange(editor) {
+                const html = editor.getHtml()
+                const text = editor.getText()
+                console.log('editor content', html)
+                // 也可以同步到 <textarea>
+                $("#Content").val(text)
+                $("#HtmlContent").val(html)
+            }
+        }
+
+        const editor = createEditor({
+            selector: '#editor-container',
+            html: '<p><br></p>',
+            config: editorConfig,
+            mode: 'default', // or 'simple'
+        })
+
+        const toolbarConfig = {}
+
+        const toolbar = createToolbar({
+            editor,
+            selector: '#toolbar-container',
+            config: toolbarConfig,
+            mode: 'default', // or 'simple'
+        })
+    </script>
+
+}
