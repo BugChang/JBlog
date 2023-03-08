@@ -15,6 +15,8 @@
 
         public bool IsPublished { get; set; }
 
-        public DateTime PublishTime { get; set; }
+        public DateTime? PublishOn { get; set; }
+
+        public Category Category { get; set; }
     }
 }

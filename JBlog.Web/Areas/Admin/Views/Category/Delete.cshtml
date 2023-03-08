@@ -1,0 +1,15 @@
+﻿@model JBlog.Application.ViewModels.CategoryViewModel
+<form asp-area="Admin" asp-controller="Category" asp-action="ConfirmDelete" method="post">
+    <div class="card card-danger">
+        <div class="card-header">
+            <h3 class="card-title">删除警告</h3>
+        </div>
+        <div class="card-body">
+            确认删除分类【@(Model.Name)】？
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary" asp-action="ConfirmDelete" asp-route-id="@Model.Id">确认</button>
+            <a class="btn btn-default" asp-action="Index">取消</a>
+        </div>
+    </div>
+</form>

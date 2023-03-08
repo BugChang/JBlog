@@ -1,31 +1,43 @@
-﻿@model JBlog.Application.ViewModels.ArticleWriteViewModel
-<form asp-area="Admin" asp-controller="Article" asp-action="Write" method="post">
+﻿@using JBlog.Application.ViewModels
+@model JBlog.Application.ViewModels.ArticleViewModel
+<form asp-area="Admin" asp-controller="Article" asp-action="Save" method="post">
     <div class="card">
         <div class="card-body">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="CreateOn" />
+            <input type="hidden" asp-for="PublishOn" />
             <div class="form-group">
-                <label for="txtTitle">标题</label>
-                <input type="text" class="form-control" id="txtTitle" placeholder="请输入文章标题">
+                <label asp-for="Title">标题</label>
+                <input type="text" class="form-control" asp-for="Title" placeholder="请输入文章标题">
             </div>
             <div class="form-group">
-                <label for="txtCategoryId">分类</label>
-                <select class="custom-select" id="txtCategoryId">
-                    <option>Value 1</option>
-                    <option>Value 2</option>
-                    <option>Value 3</option>
+                <label asp-for="CategoryId">分类</label>
+                <select class="custom-select" asp-for="CategoryId">
+                    @foreach (CategoryViewModel category in ViewBag.Categories)
+                    {
+                        <option value="@category.Id">@category.Name</option>
+                    }
                 </select>
             </div>
             <div class="form-group">
-                <input type="hidden" asp-for="@Model.Content"/>
-                <input type="hidden" asp-for="@Model.HtmlContent"/>
+                <input type="hidden" asp-for="@Model.Content" />
+                <input type="hidden" asp-for="@Model.HtmlContent" />
                 <div id="editor—wrapper">
                     <div id="toolbar-container"><!-- 工具栏 --></div>
                     <div id="editor-container"><!-- 编辑器 --></div>
                 </div>
             </div>
+            <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox" asp-for="IsPublished" value="True">
+                    <label asp-for="IsPublished" class="custom-control-label">立即发布</label>
+                </div>
+            </div>
         </div>
         <div class="card-footer">
-            <button type="submit" class="btn btn-default" asp-area="Admin" asp-controller="Article" asp-action="SaveDraft">存为草稿</button>
-            <button type="submit" class="btn btn-primary" asp-area="Admin" asp-controller="Article" asp-action="Publish">立即发布</button>
+          
+            <button type="submit" class="btn btn-primary">保存</button>
+
         </div>
     </div>
 </form>
@@ -59,7 +71,6 @@
             onChange(editor) {
                 const html = editor.getHtml()
                 const text = editor.getText()
-                console.log('editor content', html)
                 // 也可以同步到 <textarea>
                 $("#Content").val(text)
                 $("#HtmlContent").val(html)
@@ -68,7 +79,7 @@
 
         const editor = createEditor({
             selector: '#editor-container',
-            html: '<p><br></p>',
+            html: '@Html.Raw(Model.HtmlContent)',
             config: editorConfig,
             mode: 'default', // or 'simple'
         })

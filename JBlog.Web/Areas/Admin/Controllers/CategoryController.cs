@@ -21,13 +21,41 @@ namespace JBlog.Web.Areas.Admin.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            return View("Edit");
         }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            var model = await _categoryAppService.GetByIdAsync(id);
+            return View(model);
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var model = await _categoryAppService.GetByIdAsync(id);
+            return View(model);
+        }
+
+
 
         [HttpPost]
         public async Task<IActionResult> Save(CategoryViewModel viewModel)
         {
-            await _categoryAppService.AddAsync(viewModel);
+            if (viewModel.Id > 0)
+            {
+                await _categoryAppService.UpdateAsync(viewModel);
+            }
+            else
+            {
+                await _categoryAppService.AddAsync(viewModel);
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ConfirmDelete(int id)
+        {
+            await _categoryAppService.DeleteAsync(id);
             return RedirectToAction("Index");
         }
     }

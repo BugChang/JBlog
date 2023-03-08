@@ -9,6 +9,11 @@ namespace JBlog.Application.AutoMapper
         public ViewModelToEntityProfile()
         {
             CreateMap<CategoryViewModel, Category>();
+            CreateMap<ArticleViewModel, Article>()
+                .ForMember(d => d.CreateOn, o => o.Ignore())
+                .ForMember(d => d.UpdateOn, o => o.Ignore())
+                .ForMember(d => d.PublishOn, o => o.Ignore())
+                .ForMember(d => d.IsDeleted, o => o.Ignore());
         }
     }
 }

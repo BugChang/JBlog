@@ -1,0 +1,53 @@
+﻿@model IList<JBlog.Application.ViewModels.ArticleViewModel>
+<div class="card">
+    <div class="card-header">
+        <a class="btn btn-primary" asp-action="Edit">写文章</a>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th style="width: 20px">#</th>
+                    <th>标题</th>
+                    <th>分类</th>
+                    <th>已发布</th>
+                    <th>创建时间</th>
+                    <th>发布时间</th>
+                    <th>最后更新时间</th>
+                    <th style="width: 160px">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var index = 1;
+                    foreach (var article in Model)
+                    {
+                        <tr>
+                            <td>@(index++)</td>
+                            <td>@article.Title</td>
+                            <td>@article.CategoryName</td>
+                            <td>@(article.IsPublished ? "是" : "否")</td>
+                            <td>@article.CreateOn</td>
+                            <td>@article.PublishOn</td>
+                            <td>@article.UpdateOn</td>
+                            <td>
+                                <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@article.Id">修改</a>
+                                <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@article.Id">删除</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card-footer clearfix">
+        <ul class="pagination pagination-sm m-0 float-right">
+            <li class="page-item"><a class="page-link" href="#">«</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">»</a></li>
+        </ul>
+    </div>
+</div>

@@ -5,6 +5,22 @@
     {
       "library": "wangeditor5@5.1.23",
       "destination": "wwwroot/lib/wangeditor5/"
+    },
+    {
+      "library": "bootstrap@4.5.3",
+      "destination": "wwwroot/lib/bootstrap/"
+    },
+    {
+      "library": "MaterialDesign-Webfont@7.1.96",
+      "destination": "wwwroot/lib/MaterialDesign-Webfont/"
+    },
+    {
+      "library": "metisMenu@3.0.7",
+      "destination": "wwwroot/lib/metisMenu/"
+    },
+    {
+      "library": "jquery-easing@1.4.1",
+      "destination": "wwwroot/lib/jquery-easing/"
     }
   ]
 }

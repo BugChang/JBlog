@@ -17,9 +17,12 @@ builder.Services.AddDbContext<JBlogDbContext>(options =>
 
 builder.Services.AddAutoMapper(typeof(EntityToViewModelProfile), typeof(ViewModelToEntityProfile));
 
+builder.Services.AddScoped<ICategoryAppService, CategoryAppService>();
+builder.Services.AddScoped<IArticleAppService, ArticleAppService>();
+
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-builder.Services.AddScoped<ICategoryAppService, CategoryAppService>();
+builder.Services.AddScoped<IArticleRepository, ArticleRepository>();
 
 var app = builder.Build();
 

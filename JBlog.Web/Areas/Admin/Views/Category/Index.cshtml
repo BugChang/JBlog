@@ -8,20 +8,26 @@
             <thead>
                 <tr>
                     <th style="width: 20px">#</th>
-                    <th style="width: 200px">名称</th>
+                    <th>名称</th>
                     <th>描述</th>
-                    <th>操作</th>
+                    <th style="width: 160px">操作</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var category in Model)
-                {
-                    <tr>
-                        <td>1.</td>
-                        <td>@category.Name</td>
-                        <td>@category.Description</td>
-                        <td>Update software</td>
-                    </tr>
+                @{
+                    var index = 1;
+                    foreach (var category in Model)
+                    {
+                        <tr>
+                            <td>@(index++)</td>
+                            <td>@category.Name</td>
+                            <td>@category.Description</td>
+                            <td>
+                                <a class="btn btn-sm btn-warning" asp-area="Admin" asp-controller="Category" asp-action="Edit" asp-route-id="@category.Id">修改</a>
+                                <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@category.Id">删除</a>
+                            </td>
+                        </tr>
+                    }
                 }
             </tbody>
         </table>

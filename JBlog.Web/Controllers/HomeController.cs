@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using JBlog.Application.AppInterfaces;
+using Microsoft.AspNetCore.Mvc;
 
-namespace Jblog.Web.Controllers
+namespace JBlog.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly IArticleAppService _articleAppService;
+
+        public HomeController(IArticleAppService articleAppService)
         {
-            return View();
+            _articleAppService = articleAppService;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var model = await _articleAppService.GetListAsync();
+            return View(model);
         }
     }
 }

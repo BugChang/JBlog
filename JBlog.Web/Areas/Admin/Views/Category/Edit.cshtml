@@ -1,5 +1,10 @@
 ﻿@model JBlog.Application.ViewModels.CategoryViewModel
 <div class="card">
+    <div class="card-header text-right">
+        <a class="btn btn-tool" asp-action="Index" title="返回">
+            <i class="fas fa-reply"></i>
+        </a>
+    </div>
     <form asp-area="Admin" asp-controller="Category" asp-action="Save" method="post">
         <div class="card-body">
             <input type="hidden" asp-for="Id"/>
@@ -12,7 +17,6 @@
                 <textarea class="form-control" asp-for="Description" rows="3" ></textarea>
             </div>
         </div>
-
         <div class="card-footer">
             <button type="submit" class="btn btn-primary">保存</button>
         </div>

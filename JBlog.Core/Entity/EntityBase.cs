@@ -6,7 +6,7 @@
 
         public DateTime CreateOn { get; set; }
 
-        public DateTime UpdateOn { get; set; }
+        public DateTime? UpdateOn { get; set; }
 
         public bool IsDeleted { get; set; }
     }
