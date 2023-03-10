@@ -1,4 +1,5 @@
-﻿using JBlog.Core.Entity;
+﻿using JBlog.Common.Models;
+using JBlog.Core.Entity;
 
 namespace JBlog.Core.Interfaces
 {

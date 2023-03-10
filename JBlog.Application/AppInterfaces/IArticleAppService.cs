@@ -1,4 +1,5 @@
 ﻿using JBlog.Application.ViewModels;
+using JBlog.Common.Models;
 
 namespace JBlog.Application.AppInterfaces
 {
@@ -13,5 +14,7 @@ namespace JBlog.Application.AppInterfaces
         public Task DeleteAsync(int id);
 
         public Task<IList<ArticleViewModel>> GetListAsync();
+
+        public Task<PageResult<ArticleViewModel>> GetListAsync(ArticleQuery query);
     }
 }

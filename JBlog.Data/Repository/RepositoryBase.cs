@@ -39,7 +39,7 @@ namespace JBlog.Data.Repository
             return Task.CompletedTask;
         }
 
-        public IQueryable GetQueryable()
+        public IQueryable<TModel> GetQueryable()
         {
             return DbSet.AsQueryable();
         }

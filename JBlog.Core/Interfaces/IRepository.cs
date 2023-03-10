@@ -15,6 +15,6 @@ namespace JBlog.Core.Interfaces
 
         public Task UpdateAsync(TModel model);
 
-        public IQueryable GetQueryable();
+        public IQueryable<TModel> GetQueryable();
     }
 }
