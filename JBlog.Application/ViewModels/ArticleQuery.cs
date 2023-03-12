@@ -7,7 +7,7 @@ namespace JBlog.Application.ViewModels
         /// <summary>
         /// 仅发布状态
         /// </summary>
-        public bool OnlyPublished { get; set; }
+        public bool OnlyPublished { get; set; } = true;
 
         /// <summary>
         /// 关键字
@@ -22,7 +22,7 @@ namespace JBlog.Application.ViewModels
         /// <summary>
         /// 标签
         /// </summary>
-        public List<int> TagIds { get; set; }
+        public List<int> TagIds { get; set; } = new List<int>();
 
         /// <summary>
         /// 忽略置顶

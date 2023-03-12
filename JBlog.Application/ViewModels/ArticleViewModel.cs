@@ -6,6 +6,7 @@
         public string Title { get; set; }
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
+        public string Summary { get; set; }
         public string Content { get; set; }
         public string HtmlContent { get; set; }
         public string MarkdownContent { get; set; }

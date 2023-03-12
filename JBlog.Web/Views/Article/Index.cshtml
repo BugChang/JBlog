@@ -1,0 +1,275 @@
+﻿@model JBlog.Application.ViewModels.ArticleViewModel
+<section class="pb-5">
+    <div class="container" style="max-width: 1350px">
+        <div class="row pt-5">
+            <div class="col-xl-8">
+                <article class="post">
+                    <div class="post-header">
+                        <h2 class="post-title">@Model.Title</h2>
+                        <ul class="post-meta">
+                            <li><i class="mdi mdi-calendar"></i> @Model.CreateOn</li>
+                            <li><i class="mdi mdi-tag-text-outline"></i> <a href="standard-post.html#">Branding</a>, <a href="standard-post.html#">Design</a></li>
+                            <li><i class="mdi mdi-comment-multiple-outline"></i> <a href="standard-post.html#">3 Comments</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="post-preview">
+                        <a href="http://zoyothemes.com/blogezy/blog-single.html"><img src="~/images/blog/blog-1.jpg" alt="" class="img-fluid rounded"></a>
+                    </div>
+
+                    <div class="blog-detail-description">
+                        <div class="editor-content-view">
+                            @Html.Raw(Model.HtmlContent)
+                        </div>
+                        <div class="mt-5">
+                            <h6>Tags:</h6>
+                            <div class="tagcloud">
+                                <a href="standard-post.html#">logo</a>
+                                <a href="standard-post.html#">business</a>
+                                <a href="standard-post.html#">agency</a>
+                            </div>
+                        </div>
+
+                        <div class="media post-author-box">
+                            <img class="d-flex mr-3 rounded-circle" src="~/images/user/user-5.png" alt="Generic placeholder image">
+                            <div class="media-body">
+                                <h4 class="media-heading"><a href="standard-post.html">Michelle Durant</a></h4>
+                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+
+                                <ul class="socials list-unstyled mb-0 mt-3">
+                                    <li><a href="http://facebook.com"><i class="mdi mdi-facebook"></i></a></li>
+                                    <li><a href="http://twitter.com"><i class="mdi mdi-twitter"></i></a></li>
+                                    <li><a href="http://instagram.com"><i class="mdi mdi-instagram"></i></a></li>
+                                    <li><a href="http://pinterest.com"><i class="mdi mdi-pinterest"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 text-center">
+                            <h5 class="page-title-alt"><span>You Might Also Like</span></h5>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <article class="related-post">
+                                    <div class="post-preview">
+                                        <a href="http://zoyothemes.com/blogezy/blog-single.html"><img src="~/images/blog/blog-2.jpg" alt="" class="img-fluid rounded"></a>
+                                    </div>
+
+                                    <div class="post-header">
+                                        <h6><a href="http://zoyothemes.com/blogezy/single-post2.html" title="">15 Best Healthy and Easy Salad Recipes</a></h6>
+                                        <p class="post-date">August 12, 2019</p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-sm-4">
+                                <article class="related-post">
+                                    <div class="post-preview">
+                                        <a href="http://zoyothemes.com/blogezy/blog-single.html"><img src="~/images/blog/blog-3.jpg" alt="" class="img-fluid rounded"></a>
+                                    </div>
+
+                                    <div class="post-header">
+                                        <h6><a href="http://zoyothemes.com/blogezy/single-post2.html" title="">The planet doesn’t need saving. We do.</a></h6>
+                                        <p class="post-date">August 17, 2019</p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-sm-4">
+                                <article class="related-post">
+                                    <div class="post-preview">
+                                        <a href="http://zoyothemes.com/blogezy/blog-single.html"><img src="~/images/blog/blog-4.jpg" alt="" class="img-fluid rounded"></a>
+                                    </div>
+
+                                    <div class="post-header">
+                                        <h6><a href="http://zoyothemes.com/blogezy/single-post2.html" title="">Modern City With Amazing Dark Blue Sea</a></h6>
+                                        <p class="post-date">August 20, 2019</p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="mt-5">
+                            <h5 class="page-title-alt"><span>Comments</span></h5>
+                        </div>
+
+                        <ul class="media-list list-unstyled">
+
+                            <li class="media">
+                                <img class="d-flex mr-3 rounded-circle" src="~/images/user/user-5.png" alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <a href="standard-post.html#" class="text-custom reply-btn"><i class="mdi mdi-reply"></i>&nbsp; Reply</a>
+                                    <h4 class="media-heading"><a href="standard-post.html">Michelle Durant</a></h4>
+                                    <p class="text-muted post-date">Jun 23, 2019, 11:45 am</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <img class="d-flex mr-3 rounded-circle" src="~/images/user/user-2.png" alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <a href="standard-post.html#" class="text-custom reply-btn"><i class="mdi mdi-reply"></i>&nbsp; Reply</a>
+                                    <h4 class="media-heading"><a href="standard-post.html">Ronda Otoole</a></h4>
+                                    <p class="text-muted post-date">Jun 23, 2019, 11:45 am</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+
+                                    <div class="media">
+                                        <img class="d-flex mr-3 rounded-circle" src="~/images/user/user-3.png" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <a href="standard-post.html#" class="text-custom reply-btn"><i class="mdi mdi-reply"></i>&nbsp; Reply</a>
+                                            <h4 class="media-heading"><a href="standard-post.html">James Whitley</a></h4>
+                                            <p class="text-muted post-date">Jun 23, 2019, 11:45 am</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <img class="d-flex mr-3 rounded-circle" src="~/images/user/user-4.png" alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <a href="standard-post.html#" class="text-custom reply-btn"><i class="mdi mdi-reply"></i>&nbsp; Reply</a>
+                                    <h4 class="media-heading"><a href="standard-post.html">Kimberly Chretien</a></h4>
+                                    <p class="text-muted post-date">Jun 23, 2019, 11:45 am</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+                                </div>
+                            </li>
+
+                            <li class="media">
+                                <img class="d-flex mr-3 rounded-circle" src="~/images/user/user-6.png" alt="Generic placeholder image">
+                                <div class="media-body">
+                                    <a href="standard-post.html#" class="text-custom reply-btn"><i class="mdi mdi-reply"></i>&nbsp; Reply</a>
+                                    <h4 class="media-heading"><a href="standard-post.html">Michelle Durant</a></h4>
+                                    <p class="text-muted post-date">Jun 23, 2019, 11:45 am</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <div class="mt-5">
+                            <h5 class="page-title-alt"><span>Leave a reply</span></h5>
+                        </div>
+
+                        <form action="standard-post.html#" method="post" class="mt-4">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input id="author" class="form-control" placeholder="Name*" name="author" type="text" required="">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input id="email" class="form-control" placeholder="Email*" name="email" type="text" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <input id="subject" class="form-control" placeholder="Website" name="subject" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <textarea id="comment" class="form-control" rows="5" placeholder="Your Message*" name="comment" required=""></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <button name="submit" type="submit" id="submit" class="btn btn-dark">Post Comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </article>
+            </div>
+            <div class="col-xl-4">
+                @await Component.InvokeAsync("SideBar")
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section css
+    {
+    <link href="https://unpkg.com/prismjs@latest/themes/prism.css" rel="stylesheet">
+    <style>
+        .editor-content-view {
+            border-radius: 5px;
+            padding: 0 10px;
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+
+            .editor-content-view p,
+            .editor-content-view li {
+                white-space: pre-wrap; /* 保留空格 */
+                word-wrap: break-word;
+            }
+
+            .editor-content-view blockquote {
+                border-left: 8px solid #d0e5f2;
+                padding: 10px 10px;
+                margin: 10px 0;
+                background-color: #f1f1f1;
+            }
+
+            .editor-content-view code {
+                font-family: monospace;
+                background-color: #eee;
+                padding: 3px;
+                border-radius: 3px;
+            }
+
+            .editor-content-view pre > code {
+                display: block;
+                padding: 10px;
+            }
+
+            .editor-content-view table {
+                border-collapse: collapse;
+            }
+
+            .editor-content-view td,
+            .editor-content-view th {
+                border: 1px solid #ccc;
+                min-width: 50px;
+                height: 20px;
+            }
+
+            .editor-content-view th {
+                background-color: #f1f1f1;
+            }
+
+            .editor-content-view ul,
+            .editor-content-view ol {
+                padding-left: 20px;
+            }
+
+            .editor-content-view input[type="checkbox"] {
+                margin-right: 5px;
+            }
+    </style>
+ }
+@section scripts
+    {
+    <script src="https://unpkg.com/prismjs@latest/prism.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/components/prism-core.min.js"></script> -->
+    <script src="https://unpkg.com/prismjs@latest/components/prism-core.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/prismjs@latest/plugins/autoloader/prism-autoloader.min.js"></script> -->
+    <script src="https://unpkg.com/prismjs@latest/plugins/autoloader/prism-autoloader.js"></script>
+    <script>
+        Prism.highlightAll()
+    </script>
+ }

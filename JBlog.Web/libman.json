@@ -3,11 +3,15 @@
   "defaultProvider": "cdnjs",
   "libraries": [
     {
+      "library": "admin-lte@3.2.0",
+      "destination": "wwwroot/lib/admin-lte/"
+    },
+    {
       "library": "wangeditor5@5.1.23",
       "destination": "wwwroot/lib/wangeditor5/"
     },
     {
-      "library": "bootstrap@4.5.3",
+      "library": "bootstrap@4.6.2",
       "destination": "wwwroot/lib/bootstrap/"
     },
     {
@@ -19,8 +23,16 @@
       "destination": "wwwroot/lib/metisMenu/"
     },
     {
+      "library": "jquery@3.6.4",
+      "destination": "wwwroot/lib/jquery/"
+    },
+    {
       "library": "jquery-easing@1.4.1",
       "destination": "wwwroot/lib/jquery-easing/"
+    },
+    {
+      "library": "select2@4.0.13",
+      "destination": "wwwroot/lib/select2/"
     }
   ]
 }

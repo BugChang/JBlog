@@ -42,9 +42,15 @@ app.UseStaticFiles();
 
 app.UseEndpoints(endpoints =>
 {
+    endpoints.MapControllerRoute(
+        name: "shortRoute",
+        pattern: "{controller}/{id:int}",
+        defaults: new { action = "Index" }
+    );
+
     endpoints.MapControllerRoute("areaRoute", "{area}/{controller=Home}/{action=Index}/{id?}");
 
-    endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+    endpoints.MapControllerRoute("defaultRoute", "{controller=Home}/{action=Index}/{id?}");
 });
 
 await using var scope = app.Services.CreateAsyncScope();

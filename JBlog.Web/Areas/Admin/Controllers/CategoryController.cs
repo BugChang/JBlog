@@ -24,6 +24,11 @@ namespace JBlog.Web.Areas.Admin.Controllers
             return View("Edit");
         }
 
+        public IActionResult Test()
+        {
+            return View();
+        }
+
         public async Task<IActionResult> Edit(int id)
         {
             var model = await _categoryAppService.GetByIdAsync(id);

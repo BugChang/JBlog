@@ -20,6 +20,14 @@
                 </select>
             </div>
             <div class="form-group">
+                <label>标签</label>
+                <div class="select2-purple">
+                    <select class="select2" multiple="multiple" data-placeholder="创建或选择标签" data-dropdown-css-class="select2-purple" style="width: 100%;">
+                    </select>
+                </div>
+
+            </div>
+            <div class="form-group">
                 <input type="hidden" asp-for="@Model.Content" />
                 <input type="hidden" asp-for="@Model.HtmlContent" />
                 <div id="editor—wrapper">
@@ -35,7 +43,7 @@
             </div>
         </div>
         <div class="card-footer">
-          
+
             <button type="submit" class="btn btn-primary">保存</button>
 
         </div>
@@ -64,6 +72,7 @@
 @section scripts
     {
     <script src="~/lib/wangeditor5/index.min.js"></script>
+
     <script>
         const { createEditor, createToolbar } = window.wangEditor
         const editorConfig = {
@@ -79,11 +88,10 @@
 
         const editor = createEditor({
             selector: '#editor-container',
-            html: '@Html.Raw(Model.HtmlContent)',
+            html: `@Html.Raw(Model.HtmlContent)`,
             config: editorConfig,
             mode: 'default', // or 'simple'
         })
-
         const toolbarConfig = {}
 
         const toolbar = createToolbar({
@@ -92,6 +100,23 @@
             config: toolbarConfig,
             mode: 'default', // or 'simple'
         })
+        var tags = [
+            { id: 1, text: 'HTML' },
+            { id: 2, text: 'CSS' },
+            { id: 3, text: 'JavaScript' }
+        ];
+        $('.select2').select2({
+            tags: true,
+            //theme: 'bootstrap4',
+            tokenSeparators: [',', ' '],
+            createTag: function (params) {
+                return {
+                    id: params.term,
+                    text: params.term
+                }
+            },
+            data: tags
+        });
     </script>
 
 }
